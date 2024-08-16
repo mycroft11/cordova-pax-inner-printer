@@ -1,0 +1,26 @@
+{
+  "name": "cordova-pax-inner-printer",
+  "version": "4.0.0",
+  "cordova": {
+    "id": "cordova-pax-inner-printer",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "A starting point for a Cordova Plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeripay/cordova_pax_inner_printer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeripay/cordova_pax_inner_printer/issues"
+  },
+  "homepage": "https://github.com/Jeripay/cordova_pax_inner_printer#readme"
+}

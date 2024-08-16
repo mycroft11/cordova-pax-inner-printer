@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-pax-inner-printer"
+    version="4.0.0">
+    <name>Cordova Pax Inner Printer</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="paxPrinter" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="PaxPrinter">
+          <param name="android-package" value="com.example.PaxPrinter" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="com.pax.permission.ICC"/>
+        <uses-permission android:name="com.pax.permission.PICC"/>
+        <uses-permission android:name="com.pax.permission.MAGCARD"/>
+        <uses-permission android:name="com.pax.permission.PRINTER"/>
+        <uses-permission android:name="com.pax.permission.PED"/>
+
+
+     </config-file>
+
+
+        <source-file src="src/android/com/example/NeptunePrinter.java" target-dir="src/com/example/" />
+        <source-file src="src/android/com/example/NeptunePrinterBuilder.java" target-dir="src/com/example/" />
+        <source-file src="src/android/com/example/PaxPrinter.java" target-dir="src/com/example/" />
+        <source-file src="src/android/com/example/ScannerTester.java" target-dir="src/com/example/" />
+        <source-file src="src/android/com/example/MagTester.java" target-dir="src/com/example/" />
+       <source-file src="src/android/com/example/PedTester.java" target-dir="src/com/example/" />
+       <source-file src="src/android/com/example/IccTester.java" target-dir="src/com/example/" />
+       <source-file src="src/android/com/example/PiccTester.java" target-dir="src/com/example/" />
+       <source-file src="src/android/com/example/Convert.java" target-dir="src/com/example/" />
+        <!-- <source-file src="src/android/libs/NeptuneLiteAPI_V3.05.01_20190528.jar" target-dir="libs" /> -->
+    <source-file src="src/android/libs/NeptuneLiteApi_V3.24.00_20210519.jar" target-dir="libs" />
+
+
+        <!-- <source-file src="src/android/jniLibs/armeabi/libDCL.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi/libDeviceConfig.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi/libiconv.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi/libIGLBarDecoder.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi/libZBarDecoder.so" target-dir="libs/armeabi-v7a" /> -->
+
+        <source-file src="src/android/libs/armeabi/libDCL.so" target-dir="libs/armeabi" />
+        <source-file src="src/android/libs/armeabi/libDeviceConfig.so" target-dir="libs/armeabi" />
+        <source-file src="src/android/libs/armeabi/libiconv.so" target-dir="libs/armeabi" />
+        <source-file src="src/android/libs/armeabi/libIGLBarDecoder.so" target-dir="libs/armeabi" />
+        <source-file src="src/android/libs/armeabi/libZBarDecoder.so" target-dir="libs/armeabi" />
+
+      <source-file src="src/android/jniLibs/armeabi-v7a/libDCL.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libDeviceConfig.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libiconv.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libIGLBarDecoder.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libZBarDecoder.so" target-dir="jniLibs/armeabi-v7a" />
+
+            <!--  <source-file src="src/android/jniLibs/x-86/libDCL.so" target-dir="jniLibs/x-86" />
+        <source-file src="src/android/jniLibs/x-86/libDeviceConfig.so" target-dir="jniLibs/x-86" />
+        <source-file src="src/android/jniLibs/x-86/libiconv.so" target-dir="jniLibs/x-86" />
+        <source-file src="src/android/jniLibs/x-86/libIGLBarDecoder.so" target-dir="jniLibs/x-86" />
+        <source-file src="src/android/jniLibs/x-86/libZBarDecoder.so" target-dir="jniLibs/x-86" />
+
+        <source-file src="src/android/jniLibs/x86_64/libDCL.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libDeviceConfig.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libiconv.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libIGLBarDecoder.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libZBarDecoder.so" target-dir="jniLibs/x86_64" /> -->
+
+    </platform>
+
+</plugin>
